@@ -1,0 +1,203 @@
+:root {
+  --coral: #ee9a9a;
+  --coral-deep: #d45e6a;
+  --sky: #c5e6f3;
+  --sky-soft: #eaf6fb;
+  --ink: #333333;
+  --ink-soft: #6b7280;
+  --line: #e6e8eb;
+  --white: #ffffff;
+  --max: 960px;
+  --radius: 12px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Bilingual text is swapped in by app.js via textContent — no CSS hiding needed. */
+
+a { color: var(--coral-deep); }
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand-logo { height: 44px; width: auto; display: block; }
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.2px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav > a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.nav > a:hover { color: var(--ink); }
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.lang-btn[aria-pressed="true"] {
+  background: var(--coral);
+  color: var(--white);
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, var(--sky-soft), var(--white));
+  border-bottom: 1px solid var(--line);
+}
+.hero-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 80px 24px 90px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0 0 18px;
+  font-weight: 800;
+}
+.lead {
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  color: var(--ink-soft);
+  max-width: 620px;
+  margin: 0 auto 32px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--coral-deep);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 999px;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+.btn:hover { background: #bd4d59; }
+.btn:active { transform: translateY(1px); }
+.btn.email { background: var(--coral); }
+.btn.email:hover { background: var(--coral-deep); }
+
+/* Sections */
+.section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+.section h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 24px;
+  font-weight: 700;
+}
+
+/* About */
+.about-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.about-photo img {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--sky-soft);
+}
+.about-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 12px;
+}
+.placeholder-note {
+  color: var(--ink-soft);
+  font-style: italic;
+  font-size: 0.92rem;
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+  background: var(--sky-soft);
+  max-width: none;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.contact h2, .contact p, .contact .btn { max-width: var(--max); margin-left: auto; margin-right: auto; }
+.contact p { margin-bottom: 28px; color: var(--ink-soft); }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--white);
+}
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 40px 24px 56px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+.footer-inner p { margin: 4px 0; }
+.footer-company { font-weight: 700; color: var(--ink); font-size: 1rem; }
+.footer-legal { margin-top: 12px; font-size: 0.82rem; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .site-header { flex-direction: column; gap: 14px; align-items: center; }
+  .nav { gap: 16px; }
+  .about-grid { grid-template-columns: 1fr; gap: 24px; }
+  .about-photo { max-width: 220px; margin: 0 auto; }
+}

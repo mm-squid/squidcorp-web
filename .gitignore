@@ -1,0 +1,6 @@
+# Local dev preview config — not needed on GitHub Pages
+.claude/
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Squid Corp. s.r.o. — vývoj softwarových řešení</title>
+  <meta name="description" content="Squid Corp. s.r.o. — freelance vývoj a pomoc s vývojem softwarových řešení. Brno, Česká republika." data-cs="Squid Corp. s.r.o. — freelance vývoj a pomoc s vývojem softwarových řešení. Brno, Česká republika." data-en="Squid Corp. s.r.o. — freelance development and software solution support. Brno, Czech Republic." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon-180.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#">
+      <img src="assets/logo.png" alt="Squid Corp. logo" class="brand-logo" />
+      <span class="brand-name">Squid&nbsp;Corp.</span>
+    </a>
+    <nav class="nav">
+      <a href="#about" data-cs="O nás" data-en="About"></a>
+      <a href="#contact" data-cs="Kontakt" data-en="Contact"></a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="cs" class="lang-btn">CS</button>
+        <button type="button" data-lang="en" class="lang-btn">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1 data-cs="Vývoj softwarových řešení" data-en="Software solutions, built right"></h1>
+        <p class="lead"
+           data-cs="Freelance vývoj a pomoc s vývojem softwaru. Pragmaticky, spolehlivě, s ohledem na smysl celku."
+           data-en="Freelance development and software delivery support. Pragmatic, reliable, with an eye on the bigger picture."></p>
+        <a class="btn" href="#contact" data-cs="Ozvěte se" data-en="Get in touch"></a>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="assets/marek.jpg" alt="Marek Matějka" />
+        </div>
+        <div class="about-text">
+          <h2 data-cs="O nás" data-en="About"></h2>
+          <p class="about-name">Marek Matějka</p>
+          <!-- TODO: text popisu služeb dodá Marek (CZ + EN). Níže je dočasný placeholder. -->
+          <p data-cs="Squid Corp. s.r.o. je nezávislé vývojářské studio jednoho člověka. Pomáhám firmám s vývojem softwarových řešení — od návrhu přes implementaci až po dotažení do provozu."
+             data-en="Squid Corp. s.r.o. is an independent one-person development studio. I help companies build software solutions — from design through implementation to running in production."></p>
+          <p data-cs="(Tento text je dočasný — doplň prosím vlastní popis služeb.)"
+             data-en="(This text is a placeholder — please replace it with your own service description.)"
+             class="placeholder-note"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2 data-cs="Kontakt" data-en="Contact"></h2>
+      <p data-cs="Máte projekt nebo dotaz? Napište mi." data-en="Have a project or a question? Drop me a line."></p>
+      <a class="btn email" href="mailto:marek.matejka@squidcorp.eu">marek.matejka@squidcorp.eu</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-company">Squid Corp. s.r.o.</p>
+      <p>Nové Sady 988/2, 602 00 Brno, <span data-cs="Česká republika" data-en="Czech Republic"></span></p>
+      <p>
+        <span data-cs="IČO" data-en="Company ID"></span>: 13995928 ·
+        <span data-cs="Neplátce DPH" data-en="Not a VAT payer"></span>
+      </p>
+      <p class="footer-legal"
+         data-cs="Společnost je zapsána v obchodním rejstříku vedeném Krajským soudem v Brně, oddíl C, vložka 125978."
+         data-en="Registered in the Commercial Register kept by the Regional Court in Brno, Section C, Insert 125978."></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
