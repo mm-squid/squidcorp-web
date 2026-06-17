@@ -34,12 +34,17 @@ a otevři http://localhost:8000
 5. Do pole **Custom domain** zadej `squidcorp.eu` (soubor `CNAME` to nastaví automaticky).
 6. Po propagaci DNS zaškrtni **Enforce HTTPS** (certifikát vystaví GitHub sám).
 
-## DNS u Forpsi — POUZE PŘIDAT (mailu se nedotýkat!)
-Mail běží na Microsoft 365 — záznamy MX / SPF (TXT) / `autodiscover` / DKIM
-(`selector1._domainkey`, `selector2._domainkey`) a ověřovací TXT **nech beze změny**.
-Přidej jen tyto webové záznamy:
+## DNS — spravuje MICROSOFT 365, ne Forpsi!
+Doména je registrovaná u Forpsi, ale nameservery ukazují na Microsoft
+(`ns1–4.bdm.microsoftonline.com`), takže DNS záznamy se nastavují v
+**Microsoft 365 admin centru** (https://admin.microsoft.com → Settings → Domains →
+squidcorp.eu → DNS records), NE ve Forpsi.
 
-Apex doména `squidcorp.eu` — 4 A záznamy na IP GitHub Pages:
+Mail běží na M365 — záznamy MX (`squidcorp-eu.mail.protection.outlook.com`),
+`autodiscover` (→ autodiscover.outlook.com), všechny TXT (SPF/ověření) a případné DKIM
+(`selector1/2._domainkey`) **nech beze změny**. Přidej jen tyto webové záznamy:
+
+Apex doména `squidcorp.eu` — 4 A záznamy na IP GitHub Pages (a smaž starý apex A):
 ```
 A   @   185.199.108.153
 A   @   185.199.109.153
@@ -51,9 +56,11 @@ A   @   185.199.111.153
 
 Subdoména `www`:
 ```
-CNAME   www   <tvuj-github-username>.github.io.
+CNAME   www   mm-squid.github.io.
 ```
-(za `<tvuj-github-username>` dosaď své uživatelské jméno z GitHubu)
+
+Pokud M365 editor neumožní typ A: plán B = přesun DNS na Cloudflare (zdarma, naimportuje
+mailové záznamy, apex přes CNAME flattening), změnou nameserverů ve Forpsi.
 
 ## Ověření po nasazení
 - https://squidcorp.eu a https://www.squidcorp.eu se načtou s platným HTTPS.
